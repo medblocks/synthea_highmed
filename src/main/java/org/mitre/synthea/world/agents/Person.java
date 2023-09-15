@@ -61,6 +61,8 @@ public class Person implements Serializable, RandomNumberGenerator, QuadTreeElem
   public static final String MULTIPLE_BIRTH_STATUS = "multiple_birth_status";
   public static final String TELECOM = "telecom";
   public static final String ID = "id";
+  public static final String RESEARCH_SUBJECT_ID = "research_subject_id";
+  public static final String CONSENT_ID = "consent_id";
   public static final String ADDRESS = "address";
   public static final String CITY = "city";
   public static final String COUNTY = "county";
@@ -92,6 +94,10 @@ public class Person implements Serializable, RandomNumberGenerator, QuadTreeElem
   public static final String IDENTIFIER_SITE = "identifier_site";
   public static final String IDENTIFIER_VARIANT_ID = "identifier_variant_id";
   public static final String IDENTIFIER_SEED_ID = "identifier_seed_id";
+  public static final String IDENTIFIER_GKV = "identifier_gkv";
+  public static final String IDENTIFIER_PID = "identifier_pid";
+  public static final String IDENTIFIER_PKV = "identifier_pkv";
+  public static final String IDENTIFIER_SUBJECT_ID_CODE = "identifier_subject_id_code";
   public static final String CONTACT_FAMILY_NAME = "contact_family_name";
   public static final String CONTACT_GIVEN_NAME = "contact_given_name";
   public static final String CONTACT_EMAIL = "contact_email";
@@ -120,6 +126,7 @@ public class Person implements Serializable, RandomNumberGenerator, QuadTreeElem
 
   public static final String NO_VEHICLE_ACCESS = "no_vehicle_access";
   public static final String UNINSURED = "uninsured";
+
 
   private final DefaultRandomNumberGenerator random;
   public long populationSeed;
@@ -644,6 +651,7 @@ public class Person implements Serializable, RandomNumberGenerator, QuadTreeElem
   // Providers API -----------------------------------------------------------
   public static final String CURRENTPROVIDER = "currentProvider";
   public static final String PREFERREDYPROVIDER = "preferredProvider";
+
 
   /**
    * Get the preferred provider for the specified encounter type. If none is set the

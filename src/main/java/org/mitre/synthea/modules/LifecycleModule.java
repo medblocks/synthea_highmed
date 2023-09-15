@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.mitre.synthea.engine.Module;
@@ -140,6 +141,8 @@ public final class LifecycleModule extends Module {
     Map<String, Object> attributes = person.attributes;
 
     attributes.put(Person.ID, person.randUUID().toString());
+    attributes.put(Person.RESEARCH_SUBJECT_ID, person.randUUID().toString());
+    attributes.put(Person.CONSENT_ID, person.randUUID().toString());
     String language = (String) attributes.get(Person.FIRST_LANGUAGE);
     String gender = (String) attributes.get(Person.GENDER);
     if (attributes.get(Person.ENTITY) == null) {
@@ -155,7 +158,7 @@ public final class LifecycleModule extends Module {
       attributes.put(Person.LAST_NAME, lastName);
       attributes.put(Person.NAME, firstName + " " + lastName);
 
-      String phoneNumber = "555-" + ((person.randInt(999 - 100 + 1) + 100)) + "-"
+      String phoneNumber = "030-" + ((person.randInt(9999 - 1000 + 1) + 100)) + "-"
           + ((person.randInt(9999 - 1000 + 1) + 1000));
       attributes.put(Person.TELECOM, phoneNumber);
 
@@ -180,6 +183,25 @@ public final class LifecycleModule extends Module {
     String ssn = "999-" + ((person.randInt(99 - 10 + 1) + 10)) + "-"
         + ((person.randInt(9999 - 1000 + 1) + 1000));
     attributes.put(Person.IDENTIFIER_SSN, ssn);
+
+
+    Random random = new Random();
+    char randomChar = (char) ('A' + random.nextInt(26)); // Generate a random uppercase letter
+    // Ensure the generated number is at least 100,000,000 (9 digits)
+    int randomNumber = 100_000_000 + random.nextInt(900_000_000); 
+    String gkvInsurance = String.format("%c%09d", randomChar, randomNumber); // Format the string (1 letter + 9 digits)
+    attributes.put(Person.IDENTIFIER_GKV, gkvInsurance);
+
+    String pid = Integer.toString(10_000_000 + random.nextInt(90_000_000));
+    attributes.put(Person.IDENTIFIER_PID, pid);
+
+    // 6 digits
+    String pkvInsurance = Integer.toString(100_000 + random.nextInt(900_000));
+    attributes.put(Person.IDENTIFIER_PKV, pkvInsurance);
+
+    // 5 digits
+    String subjectIdCode = Integer.toString(10_000 + random.nextInt(90_000));
+    attributes.put(Person.IDENTIFIER_SUBJECT_ID_CODE, subjectIdCode);
 
     String city = (String) attributes.get(Person.CITY);
     Location location = (Location) attributes.get(Person.LOCATION);

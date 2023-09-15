@@ -25,6 +25,7 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+import org.hl7.fhir.r4.model.ServiceRequest;
 import org.mitre.synthea.export.JSONSkip;
 import org.mitre.synthea.helpers.RandomNumberGenerator;
 import org.mitre.synthea.helpers.Utilities;
@@ -161,6 +162,7 @@ public class HealthRecord implements Serializable {
     public String type;
     public List<Code> codes;
     private BigDecimal cost;
+    public final UUID serviceRequestId = record.person.randUUID();
 
     /**
      * Constructor for Entry.
@@ -628,6 +630,7 @@ public class HealthRecord implements Serializable {
     public List<ImagingStudy> imagingStudies;
     public List<Device> devices;
     public List<Supply> supplies;
+    // public List<ServiceRequest> serviceRequests;
     public Claim claim; // for now assume 1 claim per encounter
     public Code reason;
     public Code discharge;
