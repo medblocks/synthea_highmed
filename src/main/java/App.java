@@ -133,7 +133,7 @@ public class App {
             String value = argsQ.poll();
             File localModuleDir = new File(value);
             if (localModuleDir.exists() && localModuleDir.isDirectory()) {
-              Module.addModules(localModuleDir);
+              Module.addModules(localModuleDir,"xyz");
             } else {
               throw new FileNotFoundException(String.format(
                       "Specified local module directory (%s) is not a directory",
@@ -231,7 +231,7 @@ public class App {
 
     if (validArgs && validateConfig(options, overrideFutureDateError)) {
       Generator generator = new Generator(options);
-      generator.run();
+      generator.run("None");
     }
   }
 

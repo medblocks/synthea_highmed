@@ -79,7 +79,7 @@ public class EntityManagerTest {
     generator.options.overflow = false;
     URL url = Resources.getResource("identity/test_records.json");
     generator.options.fixedRecordPath = new File(url.toURI());
-    generator.run();
+    generator.run(null);
     Path jsonExportFolder = baseDirectory.resolve("json");
     Optional<Path> jsonExport = Files.list(jsonExportFolder)
         .filter(path -> path.toString().endsWith(".json")).findFirst();

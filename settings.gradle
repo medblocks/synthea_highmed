@@ -14,5 +14,12 @@ include 'shared'
 include 'api'
 include 'services:webservice'
 */
-
+pluginManagement {
+	repositories {
+		maven { url 'https://repo.spring.io/milestone' }
+		maven { url 'https://repo.spring.io/snapshot' }
+		gradlePluginPortal()
+    jcenter()
+	}
+}
 rootProject.name = 'synthea'

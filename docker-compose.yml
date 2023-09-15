@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  synthea:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: synthea:latest
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"  # Assuming your application listens on port 8080. Adjust as necessary.

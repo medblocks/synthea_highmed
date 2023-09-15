@@ -26,6 +26,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.io.IOCase;
 import org.apache.commons.io.filefilter.WildcardFileFilter;
+import org.mitre.synthea.api.controller.WebSocketController;
 import org.mitre.synthea.editors.GrowthDataErrorsEditor;
 import org.mitre.synthea.export.CDWExporter;
 import org.mitre.synthea.export.Exporter;
@@ -82,6 +83,7 @@ public class Generator {
   private Exporter.ExporterRuntimeOptions exporterRuntimeOptions;
   public static EntityManager entityManager;
   public final int threadPoolSize;
+  public String USERID;
 
   /**
    * Used only for testing and debugging. Populate this field to keep track of all patients
@@ -142,6 +144,7 @@ public class Generator {
     public int daysToTravelForward = -1;
     /** Path to a module defining which patients should be kept and exported. */
     public File keepPatientsModulePath;
+    public String userId = "default";
   }
 
   /**
@@ -215,6 +218,9 @@ public class Generator {
     if (options.state == null) {
       options.state = DEFAULT_STATE;
     }
+    if(options.userId != null) {
+      USERID = options.userId;
+    }
     int stateIndex = Location.getIndex(options.state);
     if (Config.getAsBoolean("exporter.cdw.export")) {
       CDWExporter.getInstance().setKeyStart((stateIndex * 1_000_000) + 1);
@@ -252,7 +258,6 @@ public class Generator {
     } catch (Exception e) {
       this.maxAttemptsToKeepPatient = null;
     }
-
     this.onlyVeterans = Config.getAsBoolean("generate.veteran_population_override");
     this.totalGeneratedPopulation = new AtomicInteger(0);
     this.stats = Collections.synchronizedMap(new HashMap<String, AtomicInteger>());
@@ -271,15 +276,16 @@ public class Generator {
     PayerManager.loadPayers(location);
     // ensure modules load early
     if (options.localModuleDir != null) {
-      Module.addModules(options.localModuleDir);
+      Module.addModules(options.localModuleDir, USERID);
     }
-    List<String> coreModuleNames = getModuleNames(Module.getModules(path -> false));
-    List<String> moduleNames = getModuleNames(Module.getModules(modulePredicate));
+    WebSocketController.updateGenerateLogs(USERID, "Loading modules...");
+    List<String> coreModuleNames = getModuleNames(Module.getModules(path -> false, USERID));
+    List<String> moduleNames = getModuleNames(Module.getModules(modulePredicate, USERID));
 
     if (options.keepPatientsModulePath != null) {
       try {
         Path path = options.keepPatientsModulePath.toPath().toAbsolutePath();
-        this.keepPatientsModule = Module.loadFile(path, false, null, true);
+        this.keepPatientsModule = Module.loadFile(path, false, null, true, USERID);
       } catch (Exception e) {
         throw new ExceptionInInitializerError(e);
       }
@@ -328,7 +334,8 @@ public class Generator {
   /**
    * Generate the population, using the currently set configuration settings.
    */
-  public void run() {
+  public void run(String userID) {
+    USERID = userID;
 
     // Import the fixed patient demographics records file, if a file path is given.
     if (this.options.fixedRecordPath != null) {
@@ -418,7 +425,7 @@ public class Generator {
     System.out.printf("Clinician RNG=%d\n", this.clinicianRandom.getCount());
 
     if (this.metrics != null) {
-      metrics.printStats(totalGeneratedPopulation.get(), Module.getModules(getModulePredicate()));
+      metrics.printStats(totalGeneratedPopulation.get(), Module.getModules(getModulePredicate(), USERID));
     }
   }
 
@@ -662,7 +669,7 @@ public class Generator {
 
     LifecycleModule.birth(person, person.lastUpdated);
 
-    person.currentModules = Module.getModules(modulePredicate);
+    person.currentModules = Module.getModules(modulePredicate, USERID);
 
     // Enter the loop of updating the person's life.
     updatePerson(person);
@@ -783,6 +790,16 @@ public class Generator {
         person.attributes.get(Person.CITY), person.attributes.get(Person.STATE),
         deceased,
         person.getCount());
+
+    if (USERID != null) {
+      try {
+        String logMessage = "New Person Created : " + person.attributes.get(Person.NAME) + " " + person.ageInYears(time) + " " + person.attributes.get(Person.GENDER) + " " + person.attributes.get(Person.CITY) + " " + person.attributes.get(Person.STATE) + " " + person.attributes.get(Person.STATE) + " " + deceased + " " + person.getCount();
+        WebSocketController.updateGenerateLogs(USERID,logMessage);
+      } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("Error in sending logs to websocket server");
+      }
+    }
 
     if (this.logLevel.equals("detailed")) {
       System.out.println("ATTRIBUTES");
@@ -934,7 +951,7 @@ public class Generator {
     }
 
     if (this.metrics != null) {
-      metrics.recordStats(person, finishTime, Module.getModules(modulePredicate));
+      metrics.recordStats(person, finishTime, Module.getModules(modulePredicate, USERID));
     }
 
     if (!this.logLevel.equals("none")) {

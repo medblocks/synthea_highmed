@@ -13,12 +13,38 @@ buildscript {
     classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
   }
 }
+
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+      url "https://oss.sonatype.org/content/repositories/snapshots"
+    }
+  }
+  dependencies {
+    // commons-io used in getting the version id below
+    classpath group: 'commons-io', name: 'commons-io', version: '2.5'
+    // note that commons-io is already a dependency
+    // of commons-csv in the primary dependencies above
+  }
+}
+
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.0-SNAPSHOT'
+	id 'io.spring.dependency-management' version '1.1.3'
+
+}
+
 apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
 
-sourceCompatibility = '11'
+
+sourceCompatibility = '17'
 
 apply plugin: 'application'
 apply plugin: 'eclipse'
@@ -30,6 +56,9 @@ apply plugin: 'signing'
 // In this section you declare where to find the dependencies of your project
 repositories {
   mavenCentral()
+  jcenter()
+  maven { url 'https://repo.spring.io/milestone' }
+  maven { url 'https://repo.spring.io/snapshot' }
   maven {
     url "https://oss.sonatype.org/content/repositories/snapshots"
   }
@@ -50,6 +79,12 @@ jacoco {
 }
 
 dependencies {
+  implementation 'org.projectlombok:lombok:1.18.22'
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-websocket'
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
   // This dependency is found on compile classpath of this component and consumers.
   implementation 'com.google.code.gson:gson:2.9.0'
   implementation 'com.jayway.jsonpath:json-path:2.7.0'
@@ -149,20 +184,6 @@ test {
   }
 }
 
-buildscript {
-  repositories {
-    mavenCentral()
-    maven {
-      url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
-  }
-  dependencies {
-    // commons-io used in getting the version id below
-    classpath group: 'commons-io', name: 'commons-io', version: '2.5'
-    // note that commons-io is already a dependency
-    // of commons-csv in the primary dependencies above
-  }
-}
 
 jacocoTestReport {
   reports {
@@ -311,7 +332,7 @@ task cleanOutput {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'org.mitre.synthea.api.Handler'
 
 run {
   // args are called "arams" because they are called with -P,

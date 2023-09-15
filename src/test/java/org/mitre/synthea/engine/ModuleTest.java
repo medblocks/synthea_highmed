@@ -40,7 +40,7 @@ public class ModuleTest {
   @Test
   public void getModules() {
     List<Module> allModules = Module.getModules();
-    List<Module> someModules = Module.getModules(path -> path.contains("ti"));
+    List<Module> someModules = Module.getModules(path -> path.contains("ti"),null);
 
     assertTrue(contains(allModules, someModules));
     assertFalse(contains(someModules, allModules));
@@ -177,7 +177,7 @@ public class ModuleTest {
 
   @Test
   public void addLocalModules() {
-    Module.addModules(new File("src/test/resources/module"));
+    Module.addModules(new File("src/test/resources/module"),"xyz");
     List<Module> allModules = Module.getModules();
     assertTrue(allModules.stream().filter(filterOnModuleName("COPD_TEST")).count() == 1);
   }

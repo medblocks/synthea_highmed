@@ -37,6 +37,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+import org.mitre.synthea.api.controller.WebSocketController;
 import org.mitre.synthea.helpers.Config;
 import org.mitre.synthea.helpers.Utilities;
 import org.mitre.synthea.modules.CardiovascularDiseaseModule;
@@ -58,6 +59,7 @@ import org.mitre.synthea.world.agents.Person;
 public class Module implements Cloneable, Serializable {
 
   public static final Double GMF_VERSION = 2.0;
+  public static String USERID;
 
   private static final Configuration JSON_PATH_CONFIG = Configuration.builder()
       .jsonProvider(new GsonJsonProvider())
@@ -138,7 +140,7 @@ public class Module implements Cloneable, Serializable {
       Path loadPath = localFiles ? t : basePath.relativize(t);
       retVal.put(relativePath, new ModuleSupplier(submodule,
           relativePath,
-          () -> loadFile(loadPath, submodule, overrides, localFiles)));
+          () -> loadFile(loadPath, submodule, overrides, localFiles, USERID)));
     });
     return submoduleCount.get();
   }
@@ -150,7 +152,10 @@ public class Module implements Cloneable, Serializable {
    * unit tests.
    * @param dir - the folder or directory to add.
    */
-  public static void addModules(File dir) {
+  public static void addModules(File dir, String userid) {
+    if(userid != null) {
+      USERID = userid;
+    }
     int submoduleCount = 0;
     int originalModuleCount = modules.size();
     Properties moduleOverrides = getModuleOverrides();
@@ -206,8 +211,19 @@ public class Module implements Cloneable, Serializable {
    * @return the loaded Module
    */
   public static Module loadFile(Path path, boolean submodule, Properties overrides,
-          boolean localFiles) throws Exception {
+          boolean localFiles, String userid) throws Exception {
     System.out.format("Loading %s %s\n", submodule ? "submodule" : "module", path.toString());
+          
+    if (userid != null) {
+      USERID = userid;
+      try {
+        String logMessage = "Loading " + (submodule ? "submodule" : "module") + " " + path.toString();
+        WebSocketController.updateGenerateLogs(USERID, logMessage);
+      } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("Error in sending logs to websocket server");
+      }
+    }
     String jsonString = localFiles
             ? new String(Files.readAllBytes(path), StandardCharsets.UTF_8)
             : Utilities.readResource(path.toString());
@@ -244,7 +260,7 @@ public class Module implements Cloneable, Serializable {
    * @return a list of top-level modules. Submodules are not included.
    */
   public static List<Module> getModules() {
-    return getModules(p -> true);
+    return getModules(p -> true, null);
   }
 
   /**
@@ -252,7 +268,10 @@ public class Module implements Cloneable, Serializable {
    * @return a list of top-level modules, only including core modules and those allowed by the
    *     supplied predicate. Submodules are loaded, but not included.
    */
-  public static List<Module> getModules(Predicate<String> pathPredicate) {
+  public static List<Module> getModules(Predicate<String> pathPredicate, String userid) {
+    if (userid != null) {
+      USERID = userid;
+    }
     List<Module> list = new ArrayList<Module>();
     modules.forEach((k, v) -> {
       if (v.submodule) {

@@ -61,13 +61,13 @@ public class GeneratorTest {
   public void testGeneratorCreatesPeople() throws Exception {
     int numberOfPeople = 1;
     Generator generator = new Generator(numberOfPeople);
-    generator.run();
+    generator.run(null);
     assertEquals(numberOfPeople, generator.stats.get("alive").longValue());
 
     numberOfPeople = 3;
     Config.set("generate.default_population", Integer.toString(numberOfPeople));
     generator = new Generator();
-    generator.run();
+    generator.run(null);
     assertEquals(numberOfPeople, generator.stats.get("alive").longValue());
   }
 
@@ -78,7 +78,7 @@ public class GeneratorTest {
     Generator generator = new Generator(numberOfPeople, 0L, 1L);
     Config.set("generate.track_detailed_transition_metrics", "false");
     assertNotNull(generator.metrics);
-    generator.run();
+    generator.run(null);
     assertEquals(numberOfPeople, generator.stats.get("alive").longValue());
   }
 
@@ -88,7 +88,7 @@ public class GeneratorTest {
     Config.set("generate.log_patients.detail", "detailed");
     Generator generator = new Generator(numberOfPeople, 0L, 1L);
     Config.set("generate.log_patients.detail", "simple");
-    generator.run();
+    generator.run(null);
     assertEquals(numberOfPeople, generator.stats.get("alive").longValue());
   }
 
@@ -100,7 +100,7 @@ public class GeneratorTest {
     generator.options.ageSpecified = true;
     generator.options.minAge = 50; // specify a high age to increase exposure
     //                                to modules that cause death
-    generator.run();
+    generator.run(null);
     assertEquals(0, generator.stats.get("alive").longValue());
     assertEquals(numberOfPeople, generator.stats.get("dead").longValue());
   }
@@ -110,7 +110,7 @@ public class GeneratorTest {
     Config.set("generate.only_alive_patients", "true");
     int numberOfPeople = 2;
     Generator generator = new Generator(numberOfPeople);
-    generator.run();
+    generator.run(null);
     assertEquals(0, generator.stats.get("dead").longValue());
     assertEquals(numberOfPeople, generator.stats.get("alive").longValue());
   }
@@ -121,7 +121,7 @@ public class GeneratorTest {
     Config.set("generate.only_dead_patients", "true");
     int numberOfPeople = 2;
     Generator generator = new Generator(numberOfPeople);
-    generator.run();
+    generator.run(null);
     assertEquals("false", Config.get("generate.only_alive_patients"));
     assertEquals("false", Config.get("generate.only_dead_patients"));
   }
@@ -234,7 +234,7 @@ public class GeneratorTest {
     Generator generator = new Generator(opts, ero);
     Thread generateThread = new Thread() {
       public void run() {
-        generator.run();
+        generator.run(null);
       }
     };
     generateThread.start();
