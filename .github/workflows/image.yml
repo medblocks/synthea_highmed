@@ -45,26 +45,27 @@ jobs:
         java-version: 17
         distribution: 'zulu'
     
-    - name: Cache local Maven repository
+    - name: Cache Gradle packages
       uses: actions/cache@v3
       with:
         path: |
           ~/.gradle/caches
           ~/.gradle/.wrapper
-        key: ${{ runner.os }}-gradle-jdk17-${{ hashFiles('**/gradle*') }}
+          /tmp/.buildx-cache
+        key: ${{ runner.os }}-gradle-jdk17-${{ hashFiles('**/*gradle*') }}
         restore-keys: |
           ${{ runner.os }}-gradle-jdk17
-
-    - name: Build with Maven
-      run: cd application && mvn --batch-mode package
+    
+    - name: Build with Gradle
+      run: ./gradlew assemble --no-daemon
 
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
       with:
         push: true
-        context: application
-        file: application/Dockerfile
+        context: .
+        file: Dockerfile
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
         tags: ${{ steps.docker_meta.outputs.tags }}
