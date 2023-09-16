@@ -3,55 +3,44 @@
  * can be found at https://docs.gradle.org/6.5/userguide/java_plugin.html
  */
 
-buildscript {
-  repositories {
-    maven {
-      url "https://plugins.gradle.org/m2/"
-    }
-  }
-  dependencies {
-    classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
-  }
-}
+// buildscript {
+//   repositories {
+//     maven {
+//       url "https://plugins.gradle.org/m2/"
+//     }
+//   }
+//   dependencies {
+//     classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
+//   }
+// }
 
 buildscript {
   repositories {
+    maven { url "https://plugins.gradle.org/m2/" }
     mavenCentral()
-    maven {
-      url "https://oss.sonatype.org/content/repositories/snapshots"
-    }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
   }
   dependencies {
-    // commons-io used in getting the version id below
+    classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
     classpath group: 'commons-io', name: 'commons-io', version: '2.5'
-    // note that commons-io is already a dependency
-    // of commons-csv in the primary dependencies above
   }
 }
 
 plugins {
-	id 'java'
-	id 'org.springframework.boot' version '3.2.0-SNAPSHOT'
-	id 'io.spring.dependency-management' version '1.1.3'
-
+  id 'java'
+  id 'org.springframework.boot' version '3.2.0-SNAPSHOT'
+  id 'io.spring.dependency-management' version '1.1.3'
+  id "com.github.johnrengelman.shadow" version "7.1.2"
+  id 'application'
+  id 'eclipse'
+  id 'checkstyle'
+  id 'jacoco'
+  id 'maven-publish'
+  id 'signing'
 }
-
-apply plugin: "com.github.johnrengelman.shadow"
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
-
-// Apply the java plugin to add support for Java
-apply plugin: 'java'
-
 
 sourceCompatibility = '17'
 
-apply plugin: 'application'
-apply plugin: 'eclipse'
-apply plugin: 'checkstyle'
-apply plugin: 'jacoco'
-apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 // In this section you declare where to find the dependencies of your project
 repositories {
@@ -59,9 +48,7 @@ repositories {
   jcenter()
   maven { url 'https://repo.spring.io/milestone' }
   maven { url 'https://repo.spring.io/snapshot' }
-  maven {
-    url "https://oss.sonatype.org/content/repositories/snapshots"
-  }
+  maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
 }
 
 // Uncomment to see deprecation warnings
@@ -239,7 +226,7 @@ shadowJar {
   archiveVersion.set('')
   manifest {
     attributes(
-      'Main-Class'     : 'App',
+      'Main-Class'     : 'org.mitre.synthea.api.Handler',
       'Build-Timestamp': new java.text.SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Date()),
       'Build-Version'  : versionText,
       'Created-By'     : "Gradle ${gradle.gradleVersion}",
