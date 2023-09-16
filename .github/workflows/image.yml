@@ -56,12 +56,12 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-jdk17
     
-    - name: Build with Gradle
-      run: ./gradlew assemble --no-daemon
+    # - name: Build with Gradle
+    #   run: ./gradlew assemble --no-daemon
 
     - name: Build and push
       id: docker_build
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v5
       with:
         push: true
         context: .
