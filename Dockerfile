@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN ./gradlew --refresh-dependencies
 
-RUN ./gradlew build -x test --no-daemon
+# RUN ./gradlew build -x test --no-daemon
 
 EXPOSE 3000
 
