@@ -144,7 +144,7 @@ public class Generator {
     public int daysToTravelForward = -1;
     /** Path to a module defining which patients should be kept and exported. */
     public File keepPatientsModulePath;
-    public String userId = "default";
+    public String userId = null;
   }
 
   /**
@@ -278,7 +278,7 @@ public class Generator {
     if (options.localModuleDir != null) {
       Module.addModules(options.localModuleDir, USERID);
     }
-    WebSocketController.updateGenerateLogs(USERID, "Loading modules...");
+    if(USERID != null) WebSocketController.updateGenerateLogs(USERID, "Loading modules...");
     List<String> coreModuleNames = getModuleNames(Module.getModules(path -> false, USERID));
     List<String> moduleNames = getModuleNames(Module.getModules(modulePredicate, USERID));
 
@@ -335,7 +335,7 @@ public class Generator {
    * Generate the population, using the currently set configuration settings.
    */
   public void run(String userID) {
-    USERID = userID;
+    if(userID != null) USERID = userID;
 
     // Import the fixed patient demographics records file, if a file path is given.
     if (this.options.fixedRecordPath != null) {

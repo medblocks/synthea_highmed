@@ -231,7 +231,7 @@ public class App {
 
     if (validArgs && validateConfig(options, overrideFutureDateError)) {
       Generator generator = new Generator(options);
-      generator.run("None");
+      generator.run(null);
     }
   }
 
