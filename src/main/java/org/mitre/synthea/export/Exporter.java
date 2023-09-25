@@ -268,7 +268,6 @@ public abstract class Exporter {
       } else {
         String bundleJson = FhirR4.convertToFHIRJson(person, stopTime);
         Path outFilePath = outDirectory.toPath().resolve(filename(person, fileTag, "json"));
-        System.out.println(Config.getAsBoolean("exporter.fhir.fuzz"));
         if(Config.getAsBoolean("exporter.fhir.fuzz")){
           System.out.println("-------------------------------------------");
           System.out.println("-------------------------------------------");

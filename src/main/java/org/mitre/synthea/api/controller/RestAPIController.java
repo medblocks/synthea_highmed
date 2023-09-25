@@ -138,7 +138,6 @@ public class RestAPIController {
       options.overflow = Boolean.parseBoolean(onlyAlive);
     }
     if(allRequestParams.containsKey("fuzzFhir")){
-      System.out.println("------------YO---------");
       String fuzzFhir= allRequestParams.get("fuzzFhir"); 
       Config.set("exporter.fhir.fuzz", fuzzFhir);
     }
@@ -146,6 +145,11 @@ public class RestAPIController {
       Config.set("exporter.fhir.fuzz", "false");
     }
 
+    Config.set("exporter.fhir.semanticallyInvalidModules", "false");
+    if(allRequestParams.containsKey("semanticallyInvalidModules")){
+      String semanticallyInvalidModules= allRequestParams.get("semanticallyInvalidModules"); 
+      Config.set("exporter.fhir.semanticallyInvalidModules", semanticallyInvalidModules);
+    }
 
     Generator generator = new Generator(options);
     generator.run(userID);

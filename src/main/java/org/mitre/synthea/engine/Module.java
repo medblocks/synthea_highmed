@@ -123,6 +123,16 @@ public class Module implements Cloneable, Serializable {
     return overrides;
   }
 
+  public static boolean checkForSemanticallyInvalidModules(String input) {
+    String[] words = {"invalid_male_reproduction", "invalid_female_prostate_cancer"};
+    for (String word : words) {
+      if (input.contains(word)) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   private static int walkModuleTree(
           Path modulesPath,
           Map<String, ModuleSupplier> retVal,
@@ -134,13 +144,29 @@ public class Module implements Cloneable, Serializable {
     Utilities.walkAllModules(modulesPath, t -> {
       String relativePath = relativePath(t, modulesPath);
       boolean submodule = !t.getParent().equals(modulesPath);
-      if (submodule) {
-        submoduleCount.getAndIncrement();
+
+      boolean semanticallyInvalidModules = Config.getAsBoolean("exporter.fhir.semanticallyInvalidModules");
+      if(semanticallyInvalidModules){
+        if(checkForSemanticallyInvalidModules(t.toString()) && semanticallyInvalidModules){ System.out.println("EXCLUDING - " + t.toString() ); }
+        else{
+          if (submodule) {
+            submoduleCount.getAndIncrement();
+          }
+          Path loadPath = localFiles ? t : basePath.relativize(t);
+          retVal.put(relativePath, new ModuleSupplier(submodule,
+              relativePath,
+              () -> loadFile(loadPath, submodule, overrides, localFiles, USERID)));
+        }
       }
-      Path loadPath = localFiles ? t : basePath.relativize(t);
-      retVal.put(relativePath, new ModuleSupplier(submodule,
-          relativePath,
-          () -> loadFile(loadPath, submodule, overrides, localFiles, USERID)));
+      else{
+        if (submodule) {
+            submoduleCount.getAndIncrement();
+          }
+          Path loadPath = localFiles ? t : basePath.relativize(t);
+          retVal.put(relativePath, new ModuleSupplier(submodule,
+              relativePath,
+              () -> loadFile(loadPath, submodule, overrides, localFiles, USERID)));
+      }
     });
     return submoduleCount.get();
   }
