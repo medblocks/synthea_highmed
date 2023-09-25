@@ -49,12 +49,13 @@ jobs:
       uses: actions/cache@v3
       with:
         path: |
-          ~/.gradle/caches
-          ~/.gradle/.wrapper
           /tmp/.buildx-cache
         key: ${{ runner.os }}-gradle-jdk17-${{ hashFiles('**/*gradle*') }}
         restore-keys: |
           ${{ runner.os }}-gradle-jdk17
+          
+    - name: Build Spring Boot application
+      run: ./gradlew build -x test --no-daemon
     
     - name: Build and push
       id: docker_build

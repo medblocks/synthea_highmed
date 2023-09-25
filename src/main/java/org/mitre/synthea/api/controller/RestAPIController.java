@@ -137,6 +137,14 @@ public class RestAPIController {
       String onlyAlive= allRequestParams.get("onlyAlive"); 
       options.overflow = Boolean.parseBoolean(onlyAlive);
     }
+    if(allRequestParams.containsKey("fuzzFhir")){
+      System.out.println("------------YO---------");
+      String fuzzFhir= allRequestParams.get("fuzzFhir"); 
+      Config.set("exporter.fhir.fuzz", fuzzFhir);
+    }
+    else{
+      Config.set("exporter.fhir.fuzz", "false");
+    }
 
 
     Generator generator = new Generator(options);

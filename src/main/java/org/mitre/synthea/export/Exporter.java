@@ -268,6 +268,18 @@ public abstract class Exporter {
       } else {
         String bundleJson = FhirR4.convertToFHIRJson(person, stopTime);
         Path outFilePath = outDirectory.toPath().resolve(filename(person, fileTag, "json"));
+        System.out.println(Config.getAsBoolean("exporter.fhir.fuzz"));
+        if(Config.getAsBoolean("exporter.fhir.fuzz")){
+          System.out.println("-------------------------------------------");
+          System.out.println("-------------------------------------------");
+          System.out.println("-------------------------------------------");
+          Path _outFilePath = outDirectory.toPath().resolve(filename(person, fileTag+"_FUZZED", "json"));
+          String _bundleJson = JsonFuzzer.fuzzJson(bundleJson);
+          writeNewFile(_outFilePath, _bundleJson);
+          System.out.println("-------------------------------------------");
+          System.out.println("-------------------------------------------");
+          System.out.println("-------------------------------------------");
+        }
         writeNewFile(outFilePath, bundleJson);
       }
       FhirGroupExporterR4.addPatient((String) person.attributes.get(Person.ID));
