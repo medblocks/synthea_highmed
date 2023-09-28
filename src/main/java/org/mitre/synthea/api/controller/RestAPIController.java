@@ -151,6 +151,38 @@ public class RestAPIController {
       Config.set("exporter.fhir.semanticallyInvalidModules", semanticallyInvalidModules);
     }
 
+    Config.set("exporter.fhir.includePersonModule", "true");
+    if(allRequestParams.containsKey("includePersonModule")){
+      String includePersonModule= allRequestParams.get("includePersonModule"); 
+      Config.set("exporter.fhir.export.person", includePersonModule);
+    }
+
+
+    Config.set("exporter.fhir.includeEncounterModule", "true");
+    if(allRequestParams.containsKey("includeEncounterModule")){
+      String includeEncounterModule= allRequestParams.get("includeEncounterModule"); 
+      Config.set("exporter.fhir.export.case", includeEncounterModule);
+    }
+
+
+    Config.set("exporter.fhir.includeDiagnosisModule", "true");
+    if(allRequestParams.containsKey("includeDiagnosisModule")){
+      String includeDiagnosisModule= allRequestParams.get("includeDiagnosisModule"); 
+      Config.set("exporter.fhir.export.diagnosis", includeDiagnosisModule);
+    }
+
+    Config.set("exporter.fhir.includeLabsModule", "true");
+    if(allRequestParams.containsKey("includeLabsModule")){
+      String includeLabsModule= allRequestParams.get("includeLabsModule"); 
+      Config.set("exporter.fhir.export.labs", includeLabsModule);
+    }
+
+    Config.set("exporter.fhir.includeMedicationModule", "true");
+    if(allRequestParams.containsKey("includeMedicationModule")){
+      String includeMedicationModule= allRequestParams.get("includeMedicationModule"); 
+      Config.set("exporter.fhir.export.medication", includeMedicationModule);
+    }
+
     Generator generator = new Generator(options);
     generator.run(userID);
 

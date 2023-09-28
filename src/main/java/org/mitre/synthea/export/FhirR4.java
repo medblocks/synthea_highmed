@@ -195,6 +195,9 @@ public class FhirR4 {
 
   protected static boolean USE_SHR_EXTENSIONS = Config.getAsBoolean("exporter.fhir.use_shr_extensions");
   protected static boolean TRANSACTION_BUNDLE = Config.getAsBoolean("exporter.fhir.transaction_bundle");
+  
+
+
 
   /*
    * For the most part the US Core changes from v4 -> v5 are backwards compatible,
@@ -402,6 +405,11 @@ public class FhirR4 {
    * @return FHIR Bundle containing the Person's health record
    */
   public static Bundle convertToFHIR(Person person, long stopTime) {
+    boolean EXPORT_PERSON = Config.getAsBoolean("exporter.fhir.export.person");
+    boolean EXPORT_CASE = Config.getAsBoolean("exporter.fhir.export.case");
+    boolean EXPORT_DIAGNOSIS = Config.getAsBoolean("exporter.fhir.export.diagnosis");
+    boolean EXPORT_LABS = Config.getAsBoolean("exporter.fhir.export.labs");
+    boolean EXPORT_MEDICATION = Config.getAsBoolean("exporter.fhir.export.medication");
     Bundle bundle = new Bundle();
     if (TRANSACTION_BUNDLE) {
       bundle.setType(BundleType.TRANSACTION);
@@ -409,122 +417,141 @@ public class FhirR4 {
       bundle.setType(BundleType.COLLECTION);
     }
 
-    BundleEntryComponent personEntry = basicInfo(person, bundle, stopTime);
-    researchSubject(person, bundle, stopTime);
-    consent(person, bundle, stopTime);
-    vitalStatusObservation(person, bundle, stopTime);
 
-    for (Encounter encounter : person.record.encounters) {
-      BundleEntryComponent encounterEntry = encounter(person, personEntry, bundle, encounter);
-
-      if (shouldExport(Condition.class)) {
-        for (HealthRecord.Entry condition : encounter.conditions) {
-          condition(personEntry, bundle, encounterEntry, condition);
-        }
-      }
-
-      serviceRequest(person, bundle, encounter, stopTime);
-
-      // if (shouldExport(AllergyIntolerance.class)) {
-      // for (HealthRecord.Allergy allergy : encounter.allergies) {
-      // allergy(personEntry, bundle, encounterEntry, allergy);
-      // }
-      // }
-
-      final boolean shouldExportMedia = shouldExport(Media.class);
-      final boolean shouldExportObservation = shouldExport(org.hl7.fhir.r4.model.Observation.class);
-
-      for (Observation observation : encounter.observations) {
-        // If the Observation contains an attachment, use a Media resource, since
-        // Observation resources in v4 don't support Attachments
-        // if (observation.value instanceof Attachment) {
-        // if (shouldExportMedia) {
-        // media(personEntry, bundle, encounterEntry, observation);
-        // }
-        // }
-        // else if (shouldExportObservation) {
-        observation(personEntry, bundle, encounterEntry, observation);
-        // }
-      }
-
-      // if (shouldExport(org.hl7.fhir.r4.model.Procedure.class)) {
-      // for (Procedure procedure : encounter.procedures) {
-      // procedure(personEntry, bundle, encounterEntry, procedure);
-      // }
-      // }
-
-      // if (shouldExport(Device.class)) {
-      // for (HealthRecord.Device device : encounter.devices) {
-      // device(personEntry, bundle, device);
-      // }
-      // }
-
-      // if (shouldExport(SupplyDelivery.class)) {
-      // for (HealthRecord.Supply supply : encounter.supplies) {
-      // supplyDelivery(personEntry, bundle, supply, encounter);
-      // }
-      // }
-
-      if (shouldExport(MedicationStatement.class)) {
-        for (Medication medication : encounter.medications) {
-          medicationStatement(person, personEntry, bundle, encounterEntry, encounter, medication);
-        }
-      }
-
-      // if (shouldExport(Immunization.class)) {
-      // for (HealthRecord.Entry immunization : encounter.immunizations) {
-      // immunization(personEntry, bundle, encounterEntry, immunization);
-      // }
-      // }
-
-      if (shouldExport(DiagnosticReport.class)) {
-        for (Report report : encounter.reports) {
-          report(personEntry, bundle, encounterEntry, report, encounter.serviceRequestId);
-        }
-      }
-
-      // if (shouldExport(org.hl7.fhir.r4.model.CarePlan.class)) {
-      // final boolean shouldExportCareTeam = shouldExport(CareTeam.class);
-      // for (CarePlan careplan : encounter.careplans) {
-      // BundleEntryComponent careTeamEntry = null;
-
-      // if (shouldExportCareTeam) {
-      // careTeamEntry = careTeam(person, personEntry, bundle, encounterEntry,
-      // careplan);
-      // }
-      // carePlan(person, personEntry, bundle, encounterEntry, encounter.provider,
-      // careTeamEntry,
-      // careplan);
-      // }
-      // }
-
-      // if (shouldExport(org.hl7.fhir.r4.model.ImagingStudy.class)) {
-      // for (ImagingStudy imagingStudy : encounter.imagingStudies) {
-      // imagingStudy(personEntry, bundle, encounterEntry, imagingStudy);
-      // }
-      // }
-
-      // if (USE_US_CORE_IG && shouldExport(DiagnosticReport.class)) {
-      // String clinicalNoteText = ClinicalNoteExporter.export(person, encounter);
-      // boolean lastNote =
-      // (encounter == person.record.encounters.get(person.record.encounters.size() -
-      // 1));
-      // clinicalNote(person, personEntry, bundle, encounterEntry, clinicalNoteText,
-      // lastNote);
-      // }
-
-      // if (shouldExport(org.hl7.fhir.r4.model.Claim.class)) {
-      // // one claim per encounter
-      // BundleEntryComponent encounterClaim =
-      // encounterClaim(person, personEntry, bundle, encounterEntry, encounter);
-
-      // if (shouldExport(ExplanationOfBenefit.class)) {
-      // explanationOfBenefit(personEntry, bundle, encounterEntry, person,
-      // encounterClaim, encounter, encounter.claim);
-      // }
-      // }
+    if ( EXPORT_DIAGNOSIS || EXPORT_LABS || EXPORT_MEDICATION ) {
+      EXPORT_PERSON = true;
+      EXPORT_CASE = true;
     }
 
+    BundleEntryComponent personEntry = basicInfo(person, bundle, stopTime);
+    if(EXPORT_PERSON){
+      researchSubject(person, bundle, stopTime);
+      consent(person, bundle, stopTime);
+      vitalStatusObservation(person, bundle, stopTime);
+    }
+
+    if(EXPORT_CASE){
+      for (Encounter encounter : person.record.encounters) {
+        BundleEntryComponent encounterEntry = encounter(person, personEntry, bundle, encounter);
+  
+        if(EXPORT_DIAGNOSIS){
+          if (shouldExport(Condition.class)) {
+            for (HealthRecord.Entry condition : encounter.conditions) {
+              condition(personEntry, bundle, encounterEntry, condition);
+            }
+          }
+        }
+
+        if(EXPORT_LABS){
+          serviceRequest(person, bundle, encounter, stopTime);
+        }
+  
+        // if (shouldExport(AllergyIntolerance.class)) {
+        // for (HealthRecord.Allergy allergy : encounter.allergies) {
+        // allergy(personEntry, bundle, encounterEntry, allergy);
+        // }
+        // }
+  
+        final boolean shouldExportMedia = shouldExport(Media.class);
+        final boolean shouldExportObservation = shouldExport(org.hl7.fhir.r4.model.Observation.class);
+  
+        if(EXPORT_LABS){
+          for (Observation observation : encounter.observations) {
+            // If the Observation contains an attachment, use a Media resource, since
+            // Observation resources in v4 don't support Attachments
+            // if (observation.value instanceof Attachment) {
+            // if (shouldExportMedia) {
+            // media(personEntry, bundle, encounterEntry, observation);
+            // }
+            // }
+            // else if (shouldExportObservation) {
+            observation(personEntry, bundle, encounterEntry, observation);
+            // }
+          }
+        }
+
+  
+        // if (shouldExport(org.hl7.fhir.r4.model.Procedure.class)) {
+        // for (Procedure procedure : encounter.procedures) {
+        // procedure(personEntry, bundle, encounterEntry, procedure);
+        // }
+        // }
+  
+        // if (shouldExport(Device.class)) {
+        // for (HealthRecord.Device device : encounter.devices) {
+        // device(personEntry, bundle, device);
+        // }
+        // }
+  
+        // if (shouldExport(SupplyDelivery.class)) {
+        // for (HealthRecord.Supply supply : encounter.supplies) {
+        // supplyDelivery(personEntry, bundle, supply, encounter);
+        // }
+        // }
+        if(EXPORT_MEDICATION){
+          if (shouldExport(MedicationStatement.class)) {
+            for (Medication medication : encounter.medications) {
+              medicationStatement(person, personEntry, bundle, encounterEntry, encounter, medication);
+            }
+          }
+        }
+  
+        // if (shouldExport(Immunization.class)) {
+        // for (HealthRecord.Entry immunization : encounter.immunizations) {
+        // immunization(personEntry, bundle, encounterEntry, immunization);
+        // }
+        // }
+        if(EXPORT_LABS){
+          if (shouldExport(DiagnosticReport.class)) {
+            for (Report report : encounter.reports) {
+              report(personEntry, bundle, encounterEntry, report, encounter.serviceRequestId);
+            }
+          }
+        }
+  
+        // if (shouldExport(org.hl7.fhir.r4.model.CarePlan.class)) {
+        // final boolean shouldExportCareTeam = shouldExport(CareTeam.class);
+        // for (CarePlan careplan : encounter.careplans) {
+        // BundleEntryComponent careTeamEntry = null;
+  
+        // if (shouldExportCareTeam) {
+        // careTeamEntry = careTeam(person, personEntry, bundle, encounterEntry,
+        // careplan);
+        // }
+        // carePlan(person, personEntry, bundle, encounterEntry, encounter.provider,
+        // careTeamEntry,
+        // careplan);
+        // }
+        // }
+  
+        // if (shouldExport(org.hl7.fhir.r4.model.ImagingStudy.class)) {
+        // for (ImagingStudy imagingStudy : encounter.imagingStudies) {
+        // imagingStudy(personEntry, bundle, encounterEntry, imagingStudy);
+        // }
+        // }
+  
+        // if (USE_US_CORE_IG && shouldExport(DiagnosticReport.class)) {
+        // String clinicalNoteText = ClinicalNoteExporter.export(person, encounter);
+        // boolean lastNote =
+        // (encounter == person.record.encounters.get(person.record.encounters.size() -
+        // 1));
+        // clinicalNote(person, personEntry, bundle, encounterEntry, clinicalNoteText,
+        // lastNote);
+        // }
+  
+        // if (shouldExport(org.hl7.fhir.r4.model.Claim.class)) {
+        // // one claim per encounter
+        // BundleEntryComponent encounterClaim =
+        // encounterClaim(person, personEntry, bundle, encounterEntry, encounter);
+  
+        // if (shouldExport(ExplanationOfBenefit.class)) {
+        // explanationOfBenefit(personEntry, bundle, encounterEntry, person,
+        // encounterClaim, encounter, encounter.claim);
+        // }
+        // }
+      }
+
+    }  
     // if (USE_US_CORE_IG && shouldExport(Provenance.class)) {
     // // Add Provenance to the Bundle
     // provenance(bundle, person, stopTime);
