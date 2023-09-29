@@ -1,10 +1,10 @@
 FROM eclipse-temurin:17-jdk-jammy
 
 # Add project directory
-COPY . /app
+# COPY . /app
 
 # Working dir is now the project dir
-WORKDIR /app
+# WORKDIR /app
 
 # RUN ./gradlew --refresh-dependencies
 
@@ -12,5 +12,8 @@ WORKDIR /app
 
 EXPOSE 3000
 
+ARG JAR_FILE=build/libs/synthea.jar
+ADD ${JAR_FILE} app.jar
+
 # Run the application
-CMD ["java", "-jar" ,"build/libs/synthea.jar"]
+CMD ["java", "-jar" ,"/app.jar"]
