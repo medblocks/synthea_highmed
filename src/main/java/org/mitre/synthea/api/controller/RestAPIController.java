@@ -54,26 +54,7 @@ public class RestAPIController {
     System.out.println(allRequestParams);
     System.out.println("-------------------------------------------------------");
 
-    if(allRequestParams.containsKey("exportFhir")){
-      String exportFhir= allRequestParams.get("exportFhir"); 
-      Config.set("exporter.fhir.export", exportFhir);
-    }
-    if(allRequestParams.containsKey("exportMetaData")){
-      String exportMetaData= allRequestParams.get("exportMetaData"); 
-      Config.set("exporter.metadata.export", exportMetaData);
-    }
-    if(allRequestParams.containsKey("exportFhirTransactionBundle")){
-      String exportFhirTransactionBundle= allRequestParams.get("exportFhirTransactionBundle"); 
-      Config.set("exporter.fhir.transaction_bundle", exportFhirTransactionBundle);
-    }
-    if(allRequestParams.containsKey("exportFhirHospital")){
-      String exportFhirHospital= allRequestParams.get("exportFhirHospital"); 
-      Config.set("exporter.hospital.fhir.export", exportFhirHospital);
-    }
-    if(allRequestParams.containsKey("exportFhirPractitioner")){
-      String exportFhirPractitioner= allRequestParams.get("exportFhirPractitioner"); 
-      Config.set("exporter.practitioner.fhir.export", exportFhirPractitioner);
-    }
+    
     
 
 
@@ -97,6 +78,14 @@ public class RestAPIController {
       String gender=allRequestParams.get("gender"); 
       options.gender = gender; 
     }
+
+    if(allRequestParams.containsKey("onlyAlive")){
+      String onlyAlive= allRequestParams.get("onlyAlive"); 
+      options.overflow = Boolean.parseBoolean(onlyAlive);
+    }
+
+    Generator generator = new Generator(options);
+
     if(allRequestParams.containsKey("middleNameProbability")){
       String middleNameProbability= allRequestParams.get("middleNameProbability"); 
       Config.set("generate.middle_names", middleNameProbability);
@@ -133,10 +122,7 @@ public class RestAPIController {
       Config.set("generate.costs.default_supply_cost", default_supply_cost);
     }
 
-    if(allRequestParams.containsKey("onlyAlive")){
-      String onlyAlive= allRequestParams.get("onlyAlive"); 
-      options.overflow = Boolean.parseBoolean(onlyAlive);
-    }
+    
     if(allRequestParams.containsKey("fuzzFhir")){
       String fuzzFhir= allRequestParams.get("fuzzFhir"); 
       Config.set("exporter.fhir.fuzz", fuzzFhir);
@@ -183,7 +169,27 @@ public class RestAPIController {
       Config.set("exporter.fhir.export.medication", includeMedicationModule);
     }
 
-    Generator generator = new Generator(options);
+    if(allRequestParams.containsKey("exportFhir")){
+      String exportFhir= allRequestParams.get("exportFhir"); 
+      Config.set("exporter.fhir.export", exportFhir);
+    }
+    if(allRequestParams.containsKey("exportMetaData")){
+      String exportMetaData= allRequestParams.get("exportMetaData"); 
+      Config.set("exporter.metadata.export", exportMetaData);
+    }
+    if(allRequestParams.containsKey("exportFhirTransactionBundle")){
+      String exportFhirTransactionBundle= allRequestParams.get("exportFhirTransactionBundle"); 
+      Config.set("exporter.fhir.transaction_bundle", exportFhirTransactionBundle);
+    }
+    if(allRequestParams.containsKey("exportFhirHospital")){
+      String exportFhirHospital= allRequestParams.get("exportFhirHospital"); 
+      Config.set("exporter.hospital.fhir.export", exportFhirHospital);
+    }
+    if(allRequestParams.containsKey("exportFhirPractitioner")){
+      String exportFhirPractitioner= allRequestParams.get("exportFhirPractitioner"); 
+      Config.set("exporter.practitioner.fhir.export", exportFhirPractitioner);
+    }
+
     generator.run(userID);
 
     // creating a zip of the output folder in-memory and returning it
