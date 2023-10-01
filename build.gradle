@@ -3,17 +3,6 @@
  * can be found at https://docs.gradle.org/6.5/userguide/java_plugin.html
  */
 
-// buildscript {
-//   repositories {
-//     maven {
-//       url "https://plugins.gradle.org/m2/"
-//     }
-//   }
-//   dependencies {
-//     classpath "gradle.plugin.com.github.johnrengelman:shadow:7.1.2"
-//   }
-// }
-
 buildscript {
   repositories {
     maven { url "https://plugins.gradle.org/m2/" }
@@ -66,7 +55,6 @@ jacoco {
 }
 
 dependencies {
-  implementation 'org.projectlombok:lombok:1.18.22'
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-websocket'
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
