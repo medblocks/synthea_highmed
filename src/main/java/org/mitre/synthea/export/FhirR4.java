@@ -411,6 +411,16 @@ public class FhirR4 {
     boolean EXPORT_LABS = Config.getAsBoolean("exporter.fhir.export.labs");
     boolean EXPORT_MEDICATION = Config.getAsBoolean("exporter.fhir.export.medication");
     Bundle bundle = new Bundle();
+    System.out.println("-------------------------------------------------------");
+    System.out.println("-------------------------------------------------------");
+    System.out.println(EXPORT_PERSON);
+    System.out.println(EXPORT_CASE);
+    System.out.println(EXPORT_DIAGNOSIS);
+    System.out.println(EXPORT_LABS);
+    System.out.println(EXPORT_MEDICATION);
+    System.out.println("-------------------------------------------------------");
+    System.out.println("-------------------------------------------------------");
+
     if (TRANSACTION_BUNDLE) {
       bundle.setType(BundleType.TRANSACTION);
     } else {
@@ -600,18 +610,21 @@ public class FhirR4 {
     Code gkvCode = new Code("http://fhir.de/CodeSystem/identifier-type-de-basis", "GKV",
         "Gesetzliche Krankenversicherung");
     patientResource.addIdentifier()
+        .setUse(IdentifierUse.OFFICIAL)
         .setType(mapCodeToCodeableConcept(gkvCode, "http://fhir.de/CodeSystem/identifier-type-de-basis"))
         .setSystem("http://fhir.de/NamingSystem/gkv/kvid-10")
         .setValue((String) person.attributes.get(Person.IDENTIFIER_GKV));
 
     Code pidCode = new Code("http://terminology.hl7.org/CodeSystem/v2-0203", "MR", "Medical record number");
     patientResource.addIdentifier()
+        .setUse(IdentifierUse.USUAL)
         .setType(mapCodeToCodeableConcept(pidCode, "http://terminology.hl7.org/CodeSystem/v2-0203"))
         .setSystem("https://www.example.org/fhir/sid/patienten")
         .setValue((String) person.attributes.get(Person.IDENTIFIER_PID));
 
     Code pkvCode = new Code("http://fhir.de/CodeSystem/identifier-type-de-basis", "PKV", "Private Krankenversicherung");
     patientResource.addIdentifier()
+        .setUse(IdentifierUse.SECONDARY)
         .setType(mapCodeToCodeableConcept(pkvCode, "http://fhir.de/CodeSystem/identifier-type-de-basis"))
         .setSystem("http://fhir.de/NamingSystem/gkv/kvid-10")
         .setValue((String) person.attributes.get(Person.IDENTIFIER_PKV));
