@@ -51,7 +51,6 @@ jacoco {
 }
 
 dependencies {
-  implementation project(':common_dependency')
   // This dependency is found on compile classpath of this component and consumers.
   implementation 'com.google.code.gson:gson:2.9.0'
   implementation 'com.jayway.jsonpath:json-path:2.7.0'

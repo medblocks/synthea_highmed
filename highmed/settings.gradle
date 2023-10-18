@@ -8,5 +8,3 @@ pluginManagement {
 rootProject.name = 'highmed'
 include ':synthea'
 project (':synthea').projectDir = new File(settingsDir, '../synthea')
-include ':common_dependency'
-project (':common_dependency').projectDir = new File(settingsDir, '../common_dependency')

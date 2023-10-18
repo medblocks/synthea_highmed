@@ -16,5 +16,3 @@ include 'services:webservice'
 */
 
 rootProject.name = 'synthea'
-include ':common_dependency'
-project (':common_dependency').projectDir = new File(settingsDir, '../common_dependency')
