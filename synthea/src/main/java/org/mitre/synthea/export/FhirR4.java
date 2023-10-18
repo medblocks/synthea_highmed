@@ -467,11 +467,11 @@ public class FhirR4 {
           }
         }
   
-      //   // if (shouldExport(org.hl7.fhir.r4.model.Procedure.class)) {
-      //   //   for (Procedure procedure : encounter.procedures) {
-      //   //     procedure(personEntry, bundle, encounterEntry, procedure);
-      //   //   }
-      //   // }
+        if (shouldExport(org.hl7.fhir.r4.model.Procedure.class)) {
+          for (Procedure procedure : encounter.procedures) {
+            procedure(personEntry, bundle, encounterEntry, procedure);
+          }
+        }
   
       //   // if (shouldExport(Device.class)) {
       //   //   for (HealthRecord.Device device : encounter.devices) {
@@ -2287,17 +2287,17 @@ public class FhirR4 {
     if (USE_US_CORE_IG) {
       Meta meta = new Meta();
       meta.addProfile(
-          "http://hl7.org/fhir/us/core/StructureDefinition/us-core-procedure");
+          "https://www.medizininformatik-initiative.de/fhir/core/modul-prozedur/StructureDefinition/Procedure");
       procedureResource.setMeta(meta);
     }
     procedureResource.setStatus(ProcedureStatus.COMPLETED);
     procedureResource.setSubject(new Reference(personEntry.getFullUrl()));
     procedureResource.setEncounter(new Reference(encounterEntry.getFullUrl()));
-    if (USE_US_CORE_IG) {
-      org.hl7.fhir.r4.model.Encounter encounterResource =
-          (org.hl7.fhir.r4.model.Encounter) encounterEntry.getResource();
-      procedureResource.setLocation(encounterResource.getLocationFirstRep().getLocation());
-    }
+    // if (USE_US_CORE_IG) {
+    //   org.hl7.fhir.r4.model.Encounter encounterResource =
+    //       (org.hl7.fhir.r4.model.Encounter) encounterEntry.getResource();
+    //   procedureResource.setLocation(encounterResource.getLocationFirstRep().getLocation());
+    // }
 
     Code code = procedure.codes.get(0);
     CodeableConcept procCode = mapCodeToCodeableConcept(code, SNOMED_URI);
@@ -2311,35 +2311,35 @@ public class FhirR4 {
       procedureResource.setPerformed(convertFhirDateTime(procedure.start, true));
     }
 
-    if (!procedure.reasons.isEmpty()) {
-      Code reason = procedure.reasons.get(0); // Only one element in list
+    // if (!procedure.reasons.isEmpty()) {
+    //   Code reason = procedure.reasons.get(0); // Only one element in list
 
-      BundleEntryComponent reasonCondition = findConditionResourceByCode(bundle, reason.code);
-      if (reasonCondition != null) {
-        procedureResource.addReasonReference()
-          .setReference(reasonCondition.getFullUrl())
-          .setDisplay(reason.display);
-      } else {
-        // we didn't find a matching Condition,
-        // fallback to just reason code
-        procedureResource.addReasonCode(mapCodeToCodeableConcept(reason, SNOMED_URI));
-      }
-    }
+    //   BundleEntryComponent reasonCondition = findConditionResourceByCode(bundle, reason.code);
+    //   if (reasonCondition != null) {
+    //     procedureResource.addReasonReference()
+    //       .setReference(reasonCondition.getFullUrl())
+    //       .setDisplay(reason.display);
+    //   } else {
+    //     // we didn't find a matching Condition,
+    //     // fallback to just reason code
+    //     procedureResource.addReasonCode(mapCodeToCodeableConcept(reason, SNOMED_URI));
+    //   }
+    // }
 
-    if (USE_SHR_EXTENSIONS) {
-      procedureResource.setMeta(
-          new Meta().addProfile(SHR_EXT + "shr-procedure-ProcedurePerformed"));
-      // required fields for this profile are action-PerformedContext-extension,
-      // status, code, subject, performed[x]
+    // if (USE_SHR_EXTENSIONS) {
+    //   procedureResource.setMeta(
+    //       new Meta().addProfile(SHR_EXT + "shr-procedure-ProcedurePerformed"));
+    //   // required fields for this profile are action-PerformedContext-extension,
+    //   // status, code, subject, performed[x]
 
-      Extension performedContext = new Extension();
-      performedContext.setUrl(SHR_EXT + "shr-action-PerformedContext-extension");
-      performedContext.addExtension(
-          SHR_EXT + "shr-action-Status-extension",
-          new CodeType("completed"));
+    //   Extension performedContext = new Extension();
+    //   performedContext.setUrl(SHR_EXT + "shr-action-PerformedContext-extension");
+    //   performedContext.addExtension(
+    //       SHR_EXT + "shr-action-Status-extension",
+    //       new CodeType("completed"));
 
-      procedureResource.addExtension(performedContext);
-    }
+    //   procedureResource.addExtension(performedContext);
+    // }
 
     BundleEntryComponent procedureEntry =
         newEntry(bundle, procedureResource, procedure.uuid.toString());

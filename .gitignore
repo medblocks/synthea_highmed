@@ -5,12 +5,11 @@
 .gradle
 /**/nbproject/
 /**/build/
-bin/**
+/**/bin/
 
 /**/node_modules/
 
 /.gradle/
-/bin/
 
 /failed_exports/
 /output/
@@ -52,3 +51,4 @@ synthea/src/main/resources/export/outpatient_rev_cntr_code_map.json
 # VS Code plugin files
 .history
 
+synthea/bin/main/version.txt
