@@ -55,7 +55,8 @@ jobs:
           ${{ runner.os }}-gradle-jdk17
           
     - name: Build Spring Boot application
-      run: ./gradlew build -x test --no-daemon
+      working-directory: ./highmed
+      run: ./gradlew shadowJar
     
     - name: Build and push
       id: docker_build

@@ -1,0 +1,473 @@
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Patient' has not been checked because it is unknown
+
+ResearchSubject.study: minimum required = 1, but only found 0 (from http://hl7.org/fhir/StructureDefinition/ResearchSubject)
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/ResearchSubject' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-person/StructureDefinition/Vitalstatus' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/DiagnosticReportLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/DiagnosticReportLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationAdministration' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationAdministration' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/DiagnosticReportLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-medikation/StructureDefinition/MedicationStatement' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/DiagnosticReportLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+The code system reference http://hl7.org/fhir/v3/ActCode/cs.html is wrong - the code system reference cannot be to an HTML page. This may be the correct reference: {unable to determine intended url}
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-fall/StructureDefinition/KontaktGesundheitseinrichtung' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-diagnose/StructureDefinition/Diagnose' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ObservationLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/DiagnosticReportLab' has not been checked because it is unknown
+
+Profile reference 'https://www.medizininformatik-initiative.de/fhir/core/modul-labor/StructureDefinition/ServiceRequestLab' has not been checked because it is unknown
+
+Found bundle entries with duplicate fullURL: urn:uuid:d0e3da79-2313-2049-e6ad-cf17cb92b189 - Types: ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:47fb76eb-afd7-ea5f-626d-286827d36c1c - Types: ServiceRequest , ServiceRequest , ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:7c5fa79c-5178-b409-cdf9-9a123ad704d5 - Types: ServiceRequest , ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:167cd3dd-6471-5fd1-a24c-781ff5d30f12 - Types: ServiceRequest , ServiceRequest , ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:9c64aa89-2023-6494-a018-9b58d9f967ab - Types: ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:bc1ddcb7-e320-00f9-3581-084908711c29 - Types: ServiceRequest , ServiceRequest , ServiceRequest
+
+Found bundle entries with duplicate fullURL: urn:uuid:88991f26-65e9-d94a-b2f6-05c8b4ba1d2f - Types: ServiceRequest , ServiceRequest

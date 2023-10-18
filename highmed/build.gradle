@@ -1,0 +1,61 @@
+import com.github.jengelman.gradle.plugins.shadow.transformers.*
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.17-SNAPSHOT'
+    id 'io.spring.dependency-management' version '1.1.3'
+    id 'com.github.johnrengelman.shadow' version '7.1.0' // Add Shadow plugin
+}
+
+group = 'com.medblocks'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '11'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/milestone' }
+    maven { url 'https://repo.spring.io/snapshot' } 
+}
+
+dependencies {
+    implementation project(':common_dependency')
+    implementation files('../synthea/build/libs/synthea-with-dependencies.jar')
+    implementation 'commons-io:commons-io:2.14.0'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+
+tasks.named('compileJava').configure {
+    dependsOn ':synthea:shadowJar'
+    doFirst {
+        configurations.compileClasspath.files // This will resolve the dependency
+    }
+}
+
+// Configure the shadowJar task
+shadowJar {
+	archiveClassifier = 'shadow' // Optional: adds a classifier to the JAR file
+	version = '1.0'
+
+
+	mergeServiceFiles() // Merges service files, if needed
+	// Add any other configuration options as needed
+  append 'META-INF/spring.handlers'
+    append 'META-INF/spring.schemas'
+    append 'META-INF/spring.tooling'
+    transform(PropertiesFileTransformer) {
+        paths = ['META-INF/spring.factories' ]
+        mergeStrategy = "append"
+    }
+	manifest {
+		attributes 'Main-Class': 'com.medblocks.highmed.HighmedApplication' // Replace with your actual main class
+	}
+}

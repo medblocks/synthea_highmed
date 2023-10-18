@@ -3,9 +3,11 @@
 .project
 .settings
 .gradle
-/nbproject/**
-/build/**
+/**/nbproject/
+/**/build/
 bin/**
+
+/**/node_modules/
 
 /.gradle/
 /bin/
@@ -17,25 +19,25 @@ bin/**
 **/*.log
 
 # don't commit the autobuilt version file
-src/main/resources/version.txt
+synthea/src/main/resources/version.txt
 
 # don't commit the code maps
-src/main/resources/export/condition_code_map.json
-src/main/resources/export/medication_code_map.json
-src/main/resources/export/drg_code_map.json
-src/main/resources/export/dme_code_map.json
-src/main/resources/export/hcpcs_code_map.json
-src/main/resources/export/betos_code_map.json
-src/main/resources/export/external_codes.csv
-src/main/resources/export/snf_pdpm_code_map.json
-src/main/resources/export/snf_pps_code_map.json
-src/main/resources/export/snf_rev_cntr_code_map.json
-src/main/resources/export/hha_rev_cntr_code_map.json
-src/main/resources/export/hha_pps_case_mix_codes.csv
-src/main/resources/export/hha_pps_pdgm_codes.csv
-src/main/resources/export/hospice_rev_cntr_code_map.json
-src/main/resources/export/inpatient_rev_cntr_code_map.json
-src/main/resources/export/outpatient_rev_cntr_code_map.json
+synthea/src/main/resources/export/condition_code_map.json
+synthea/src/main/resources/export/medication_code_map.json
+synthea/src/main/resources/export/drg_code_map.json
+synthea/src/main/resources/export/dme_code_map.json
+synthea/src/main/resources/export/hcpcs_code_map.json
+synthea/src/main/resources/export/betos_code_map.json
+synthea/src/main/resources/export/external_codes.csv
+synthea/src/main/resources/export/snf_pdpm_code_map.json
+synthea/src/main/resources/export/snf_pps_code_map.json
+synthea/src/main/resources/export/snf_rev_cntr_code_map.json
+synthea/src/main/resources/export/hha_rev_cntr_code_map.json
+synthea/src/main/resources/export/hha_pps_case_mix_codes.csv
+synthea/src/main/resources/export/hha_pps_pdgm_codes.csv
+synthea/src/main/resources/export/hospice_rev_cntr_code_map.json
+synthea/src/main/resources/export/inpatient_rev_cntr_code_map.json
+synthea/src/main/resources/export/outpatient_rev_cntr_code_map.json
 
 # H2 database files
 **/*.mv.db
@@ -49,3 +51,4 @@ src/main/resources/export/outpatient_rev_cntr_code_map.json
 
 # VS Code plugin files
 .history
+

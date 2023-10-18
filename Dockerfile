@@ -12,7 +12,7 @@ FROM eclipse-temurin:17-jdk-jammy
 
 EXPOSE 3000
 
-ARG JAR_FILE=build/libs/synthea.jar
+ARG JAR_FILE=highmed/build/libs/highmed-1.0-shadow.jar
 ADD ${JAR_FILE} app.jar
 
 # Run the application
