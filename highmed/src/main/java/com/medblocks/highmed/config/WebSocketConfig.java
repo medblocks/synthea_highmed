@@ -13,25 +13,25 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry){
-                registry.addMapping("/ws")
-                        .allowCredentials(true)
-                        .allowedOrigins("*")
-                        .allowedHeaders("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .maxAge(3600);
+    // @Bean
+    // public WebMvcConfigurer corsConfigurer() {
+    //     return new WebMvcConfigurer() {
+    //         @Override
+    //         public void addCorsMappings(CorsRegistry registry){
+    //             registry.addMapping("/ws")
+    //                     .allowCredentials(true)
+    //                     .allowedOrigins("*")
+    //                     .allowedHeaders("*")
+    //                     .allowedMethods("GET", "POST", "PUT", "DELETE")
+    //                     .maxAge(3600);
 
-            }
-        };
-    }
+    //         }
+    //     };
+    // }
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint("/ws").withSockJS();
+        registry.addEndpoint("/ws").setAllowedOrigins("http://localhost:3000","https://highmed.dev.medblocks.com").withSockJS();
     }
 
     @Override
