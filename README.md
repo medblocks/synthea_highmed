@@ -9,7 +9,7 @@ Generates Synthetic FHIR Resources based on the modules defined by the [Medical 
 Running using [Docker](https://docs.docker.com/get-docker/):
 
 ```
-docker run -p 3000:3000 ghcr.io/medblocks/synthea_highmed:main
+docker run --pull=always -p 3000:3000 ghcr.io/medblocks/synthea_highmed:main
 ```
 
 - Visit http://localhost:3000
