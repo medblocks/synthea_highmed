@@ -77,11 +77,9 @@ public class APIController {
 
     if(allRequestParams.containsKey("onlyAlive")){
       String onlyAlive= allRequestParams.get("onlyAlive"); 
-      options.overflow = Boolean.parseBoolean(onlyAlive);
+      Config.set("generate.only_alive_patients", onlyAlive);
     }
-
-    Generator generator = new Generator(options, springWebSocketLogger, userID);
-
+    
     if(allRequestParams.containsKey("middleNameProbability")){
       String middleNameProbability= allRequestParams.get("middleNameProbability"); 
       Config.set("generate.middle_names", middleNameProbability);
@@ -184,6 +182,7 @@ public class APIController {
       Config.set("exporter.practitioner.fhir.export", exportFhirPractitioner);
     }
 
+    Generator generator = new Generator(options, springWebSocketLogger, userID);
     generator.run();
 
     // creating a zip of the output folder in-memory and returning it
