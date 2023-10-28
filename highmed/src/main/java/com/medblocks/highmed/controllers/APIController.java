@@ -49,7 +49,6 @@ public class APIController {
     String userID = "";
     if(allRequestParams.containsKey("userID")){
       userID= allRequestParams.get("userID"); 
-      Config.set("exporter.socket.userId", userID);
     }
     else{
       return new ResponseEntity<>(HttpStatus.BAD_GATEWAY);
