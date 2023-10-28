@@ -63,10 +63,12 @@ public class APIController {
       options.seed = seed; 
     }
     if(allRequestParams.containsKey("minAge")){
+      options.ageSpecified = true;
       int minAge=Integer.parseInt(allRequestParams.get("minAge")); 
       options.minAge = minAge; 
     }
     if(allRequestParams.containsKey("maxAge")){
+      options.ageSpecified = true;
       int maxAge=Integer.parseInt(allRequestParams.get("maxAge")); 
       options.maxAge = maxAge; 
     }
